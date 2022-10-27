@@ -6,7 +6,7 @@ public:
         vector<vector<int>> dp(n,vector<int>(m,-1));
         return helper2(n-1,m-1,grid,dp);
     }
-    
+    //TOP DOWN APPROACH
     int helper(int n, int m, vector<vector<int>>& grid, vector<vector<int>> &dp){
         if(n == 0 && m == 0){
             return grid[n][m];
@@ -20,6 +20,7 @@ public:
         return dp[n][m] = grid[n][m] + min(helper(n-1,m,grid,dp), helper(n,m-1,grid,dp));
     }
     
+    //BOTTOM UP APPROACH
     int helper2(int n, int m, vector<vector<int>>& grid, vector<vector<int>> &dp){
         dp[0][0] = grid[0][0];
         for(int i=0;i<=n;i++){
