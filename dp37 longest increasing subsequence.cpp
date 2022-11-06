@@ -34,7 +34,7 @@ public:
         //base case. initialize the last row with 0s, done by default
         
         for(int i=m-1;i>=0;i--){
-            for(int j=m-1;j>=-1;j--){
+            for(int j=i-1;j>=-1;j--){
                 int pick = 0, notpick = 0;
                 notpick = dp[i+1][j+1];
                 if(j == -1 || nums[i] > nums[j]){
@@ -55,7 +55,7 @@ public:
         //base case. initialize the last row with 0s, done by default
         
         for(int i=m-1;i>=0;i--){
-            for(int j=m-1;j>=-1;j--){
+            for(int j=i-1;j>=-1;j--){
                 int pick = 0, notpick = 0;
                 notpick = next[j+1];
                 if(j == -1 || nums[i] > nums[j]){
